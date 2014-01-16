@@ -1,5 +1,5 @@
 {
-  "name": "wf-js-grunt",
+  "name": "wf-grunt",
   "version": "0.3.1",
   "description": "Common grunt tasks for WebFilings JavaScript projects.",
   "private": true,
