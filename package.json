@@ -6,7 +6,7 @@
   "main": "./src/index",
   "repository": {
     "type": "git",
-    "url": "git://github.com/WebFilings/wf-js-grunt.git"
+    "url": "git://github.com/WebFilings/wf-grunt.git"
   },
   "readmeFilename": "README.md",
   "dependencies": {
