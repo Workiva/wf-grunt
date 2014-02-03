@@ -37,7 +37,9 @@ var directories = {
     apiOutput: 'docs/api/',
     complexityOutput: 'out/complexity/',
     coverageOutput: 'out/coverage/',
-    testOutput: 'out/test/'
+    testOutput: 'out/test/',
+    dist: 'dist/',
+    src: 'src/'
 };
 
 var globs = {
@@ -47,6 +49,7 @@ var globs = {
     examples: 'examples/**/*.js',
     specs: 'test/**/*Spec.js',
     src: 'src/**/*.js',
+    ts: 'src/**/*.ts',
     test: 'test/**/*.js',
     tools: 'tools/**/*.js',
     vendor: 'examples/vendor/**/*.js'

@@ -6,7 +6,9 @@ bower_components/
 docs/api/
 node_modules/
 out/
+dist/
 
 _*.runner.html
 npm_debug.log
 *.orig
+tscommand.tmp.txt

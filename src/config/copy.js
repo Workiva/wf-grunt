@@ -14,24 +14,22 @@
  * limitations under the License.
  */
 
+// https://github.com/gruntjs/grunt-contrib-clean
+
 'use strict';
 
-var subtasks = require('../util').getAliasTaskSubtasks;
+module.exports = function(settings) {
+    var buildDir = settings.directories.dist;
+    var src = settings.directories.src;
 
-module.exports = function(grunt) {
-    grunt.registerTask('default', 'Check code quality (lint, test, cover, docs).', function() {
-        grunt.task.run(subtasks(this.name, [
-            'jshint',
-            'connect:run',
-            'clean:test',
-            'clean:dist',
-            'ts:build',
-            'copy:js',
-            'jasmine:test',
-            'clean:coverage',
-            'jasmine:coverage',
-            'clean:docs',
-            'jsdoc'
-        ]));
-    });
+    return {
+        copy: {
+            js: {
+                expand: true,
+                cwd: src,
+                src: ['**/*.js'],
+                dest: buildDir
+            }
+        }
+    };
 };

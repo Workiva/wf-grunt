@@ -26,7 +26,8 @@ module.exports = function(settings) {
             complexity: directories.complexityOutput,
             coverage: directories.coverageOutput,
             test: directories.testOutput,
-            docs: directories.apiOutput
+            docs: directories.apiOutput,
+            dist: directories.dist
         }
     };
 };

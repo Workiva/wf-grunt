@@ -3,8 +3,10 @@
 docs/
 node_modules/
 out/
+dist/
 
 *.sublime-*
 _*.runner.html
 npm_debug.log
 *.orig
+tscommand.tmp.txt
