@@ -23,5 +23,5 @@ describe('e2e', function() {
             .on('exit', function() {
                 done();
             });
-    });
+    }, 15000);
 });
