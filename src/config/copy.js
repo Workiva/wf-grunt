@@ -19,16 +19,16 @@
 'use strict';
 
 module.exports = function(settings) {
-    var buildDir = settings.directories.dist;
-    var src = settings.directories.src;
+    var distDir = settings.directories.dist;
+    var srcDir = settings.directories.src;
 
     return {
         copy: {
             js: {
                 expand: true,
-                cwd: src,
+                cwd: srcDir,
                 src: ['**/*.js'],
-                dest: buildDir
+                dest: distDir
             }
         }
     };
