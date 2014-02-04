@@ -29,7 +29,7 @@ module Animals {
         }
     }
 
-    class Turkey extends Bird {
+    export class Turkey extends Bird {
         constructor() {
             super('Turkey');
             try {

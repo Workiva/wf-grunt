@@ -45,6 +45,7 @@ var directories = {
 var globs = {
     bower: 'bower_components/**/*.js',
     css: 'examples/**/*.css',
+    distSrc: 'dist/**/*.js',
     html: 'examples/**/*.html',
     examples: 'examples/**/*.js',
     specs: 'test/**/*Spec.js',

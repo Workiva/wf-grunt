@@ -37,7 +37,7 @@ module.exports = function(settings) {
                 }
             },
             test: {
-                src: [globs.src],
+                src: [globs.distSrc],
                 options: {
                     outfile: files.testRunner,
                     template: require('grunt-template-jasmine-requirejs'),
@@ -47,7 +47,7 @@ module.exports = function(settings) {
                 }
             },
             coverage: {
-                src: [globs.src],
+                src: [globs.distSrc],
                 options: {
                     outfile: files.coverageRunner,
                     template: require('grunt-template-jasmine-istanbul'),
