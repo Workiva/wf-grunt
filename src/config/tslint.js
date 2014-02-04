@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-// https://github.com/gruntjs/grunt-contrib-clean
+// Options
+// https://github.com/palantir/tslint
 
 'use strict';
 
@@ -27,21 +27,14 @@ module.exports = function(settings) {
                     "rules": {
                         "class-name": true,
                         "curly": true,
-                        "eofline": false,
                         "forin": true,
                         "indent": [true, 4],
                         "label-position": true,
                         "label-undefined": true,
                         "max-line-length": [true, 140],
                         "no-arg": true,
-                        "no-bitwise": true,
-                        "no-console": [true,
-                            "debug",
-                            "info",
-                            "time",
-                            "timeEnd",
-                            "trace"
-                        ],
+                        "no-bitwise": false,
+                        "no-consecutive-blank-lines": true,
                         "no-construct": true,
                         "no-debugger": true,
                         "no-duplicate-key": true,
