@@ -31,15 +31,10 @@ module.exports = function(settings) {
                 declaration: false,
                 removeComments: true
             },
-            build: {
+            compile: {
                 src: settings.globs.ts,
-                outDir: distDir,
-            },
-            watch: {
-                src: settings.globs.ts,
-                outDir: distDir,
-                watch: srcDir
-            },
+                outDir: distDir
+            }
         }
     };
 };

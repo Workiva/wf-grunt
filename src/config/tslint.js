@@ -27,8 +27,10 @@ module.exports = function(settings) {
                     "rules": {
                         "class-name": true,
                         "curly": true,
+                        "eofline": true,
                         "forin": true,
                         "indent": [true, 4],
+                        "interface-name": true,
                         "label-position": true,
                         "label-undefined": true,
                         "max-line-length": [true, 140],
@@ -46,8 +48,8 @@ module.exports = function(settings) {
                         "no-unreachable": true,
                         "one-line": [true,
                             "check-open-brace",
-                            "check-catch",
-                            "check-else",
+                            //"check-catch",
+                            //"check-else",
                             "check-whitespace"
                         ],
                         "quotemark": [true, "single"],

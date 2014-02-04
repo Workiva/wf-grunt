@@ -32,7 +32,30 @@ module Animals {
     class Turkey extends Bird {
         constructor() {
             super('Turkey');
-            this.prowess = 1;
+            try {
+                this.prowess = 1;
+            } catch (x) { console.log(x); }
+            var obj = {
+                a: 1,
+                b: 2,
+                d: 'something'
+            };
+            var c = obj['crap' + obj.a];
+
+            if (obj) {
+                obj.d = 'data';
+            }
+            else {
+                obj.d = 'nada';
+            }
+
+            try {
+                obj.a = 5;
+            }
+            catch (ex) {
+                console.log('oh boy');
+            }
+
         }
     }
 }

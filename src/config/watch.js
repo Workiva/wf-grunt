@@ -70,6 +70,13 @@ module.exports = function(settings) {
                 options: {
                     livereload: livereloadPort
                 }
+            },
+            ts: {
+                files: [globs.ts],
+                tasks: ['tslint','ts:compile'],
+                options: {
+                    livereload: livereloadPort
+                }
             }
         }
     };

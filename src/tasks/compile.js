@@ -19,16 +19,13 @@
 var subtasks = require('../util').getAliasTaskSubtasks;
 
 module.exports = function(grunt) {
-    grunt.registerTask('default', 'Check code quality (lint, test, cover, docs).', function() {
+    grunt.registerTask('compile', 'Check code quality, compile and output to dist/', function() {
         grunt.task.run(subtasks(this.name, [
-            'compile',
-            'connect:run',
-            'clean:test',
-            'jasmine:test',
-            'clean:coverage',
-            'jasmine:coverage',
-            'clean:docs',
-            'jsdoc'
+            'jshint',
+            'tslint',
+            'clean:dist',
+            'ts:compile',
+            'copy:js'
         ]));
     });
 };
