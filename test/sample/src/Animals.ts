@@ -9,7 +9,6 @@ module Animals {
         }
     }
 
-    // hidden internal class
     export class Bird extends Animal {
         wings: boolean;
         prowess: number;
@@ -20,7 +19,6 @@ module Animals {
         }
     }
 
-    // exposed subclass
     export class Eagle extends Bird {
 
         constructor() {
