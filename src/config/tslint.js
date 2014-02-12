@@ -41,7 +41,7 @@ module.exports = function(settings) {
                         "no-debugger": true,
                         "no-duplicate-key": true,
                         "no-duplicate-variable": true,
-                        "no-empty": true,
+                        "no-empty": false,
                         "no-eval": true,
                         "no-string-literal": true,
                         "no-trailing-whitespace": true,
