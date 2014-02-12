@@ -19,9 +19,9 @@ var spawn = require('child_process').spawn;
 describe('e2e', function() {
     it('should successfully run `grunt` in project', function(done) {
         spawn('grunt', [], { cwd: './test/sample', stdio: 'inherit' })
-            .on('error', done)
-            .on('exit', function() {
+            .on('exit', function(code) {
+                expect(code).toBe(0);
                 done();
             });
-    });
+    }, 20000);
 });

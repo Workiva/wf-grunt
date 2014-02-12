@@ -17,7 +17,7 @@
 define(function(require) {
     'use strict';
 
-    var Foo = require('../src/Foo');
+    var Foo = require('../dist/Foo');
 
     describe('Foo', function() {
         it('should be named "foo"', function() {
