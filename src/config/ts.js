@@ -32,8 +32,7 @@ module.exports = function(settings) {
                 removeComments: true
             },
             compile: {
-                src: settings.globs.ts,
-                outDir: distDir
+                src: settings.globs.ts
             }
         }
     };
