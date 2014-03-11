@@ -33,14 +33,17 @@ module.exports = function(settings) {
                 }
             },
             coverage: {
-                files: [globs.src, globs.test],
+                files: [globs.src, globs.templates, globs.test, globs.testTemplates],
                 tasks: ['clean:coverage', 'jasmine:coverage'],
                 options: {
                     livereload: livereloadPort
                 }
             },
             dev: {
-                files: [files.index, globs.src, globs.test, globs.examples, globs.html, globs.css],
+                files: [
+                    files.index, globs.src, globs.templates, globs.test, globs.testTemplates,
+                    globs.examples, globs.html, globs.css
+                ],
                 tasks: ['jshint', 'clean:test', 'jasmine:test'],
                 options: {
                     livereload: livereloadPort
@@ -58,14 +61,17 @@ module.exports = function(settings) {
                 tasks: ['jshint']
             },
             serve: {
-                files: [files.index, globs.src, globs.test, globs.examples, globs.html, globs.css],
+                files: [
+                    files.index, globs.src, globs.templates, globs.test, globs.testTemplates,
+                    globs.examples, globs.html, globs.css
+                ],
                 tasks: [],
                 options: {
                     livereload: livereloadPort
                 }
             },
             test: {
-                files: [globs.src, globs.test],
+                files: [globs.src, globs.templates, globs.test, globs.testTemplates],
                 tasks: ['clean:test', 'jasmine:test'],
                 options: {
                     livereload: livereloadPort

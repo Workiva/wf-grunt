@@ -47,7 +47,9 @@ var globs = {
     examples: 'examples/**/*.js',
     specs: 'test/**/*Spec.js',
     src: 'src/**/*.js',
+    templates: 'src/**/*.html',
     test: 'test/**/*.js',
+    testTemplates: 'test/**/*.html',
     tools: 'tools/**/*.js',
     vendor: 'examples/vendor/**/*.js'
 };
