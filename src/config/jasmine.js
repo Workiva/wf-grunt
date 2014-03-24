@@ -35,7 +35,7 @@ module.exports = function(settings) {
                     consolidate: true
                 }
             },
-            testUnit: {
+            test: {
                 src: [globs.src],
                 specs: globs.unitSpecs,
                 options: {
@@ -67,7 +67,7 @@ module.exports = function(settings) {
                     }
                 }
             },
-            testIntegration: {
+            integration: {
                 src: [globs.src],
                 options: {
                     specs: globs.integrationSpecs,
