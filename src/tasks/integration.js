@@ -19,7 +19,7 @@
 var subtasks = require('../util').getAliasTaskSubtasks;
 
 module.exports = function(grunt) {
-    grunt.registerTask('integration', 'Run integration specs and skip unit tests (found in globs.integrationSpecs)', function() {
+    grunt.registerTask('integration', 'Check code quality, run integration specs, open the project web site and watch.', function() {
         grunt.task.run(subtasks(this.name, [
             'jshint',
             'connect:run',
