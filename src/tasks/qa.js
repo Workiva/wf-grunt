@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             'clean:docs',
             'jsdoc',
             'shell:openWeb',
-            'watch:dev'
+            'watch:unitAndIntegrationTests'
         ]));
     });
 };

@@ -24,8 +24,8 @@ module.exports = function(grunt) {
             'connect:run',
             'clean:test',
             'jasmine:test',
-            'shell:openTest',
-            'watch:test'
+            'shell:openUnitTest',
+            'watch:unitTestOnly'
         ]));
     });
 };

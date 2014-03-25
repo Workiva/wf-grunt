@@ -31,8 +31,11 @@ module.exports = function(settings) {
             openCoverage: {
                 command: 'open ' + wwwBaseUrl + directories.coverageOutput
             },
-            openTest: {
+            openUnitTest: {
                 command: 'open ' + wwwBaseUrl + files.testRunner
+            },
+            openIntegrationTest: {
+                command: 'open ' + wwwBaseUrl + files.integrationRunner
             },
             openDocs: {
                 command: 'open ' + wwwBaseUrl + directories.apiOutput

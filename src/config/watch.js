@@ -39,9 +39,23 @@ module.exports = function(settings) {
                     livereload: livereloadPort
                 }
             },
-            dev: {
-                files: [files.index, globs.src, globs.test, globs.examples, globs.html, globs.css],
+            unitTestOnly: {
+                files: [files.index, globs.src, globs.unitSpecs, globs.examples, globs.html, globs.css],
                 tasks: ['jshint', 'clean:test', 'jasmine:test'],
+                options: {
+                    livereload: livereloadPort
+                }
+            },
+            integrationTestOnly: {
+                files: [files.index, globs.src, globs.integrationSpecs, globs.examples, globs.html, globs.css],
+                tasks: ['jshint', 'clean:test', 'jasmine:integration'],
+                options: {
+                    livereload: livereloadPort
+                }
+            },
+            unitAndIntegrationTests: {
+                files: [files.index, globs.src, globs.test, globs.examples, globs.html, globs.css],
+                tasks: ['jshint', 'clean:test', 'jasmine:test', 'jasmine:integration'],
                 options: {
                     livereload: livereloadPort
                 }
