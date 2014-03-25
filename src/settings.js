@@ -39,8 +39,7 @@ var directories = {
     apiOutput: 'docs/api/',
     complexityOutput: 'out/complexity/',
     coverageOutput: 'out/coverage/',
-    testOutput: 'out/test/',
-    integrationOutput: 'out/integration'
+    testOutput: 'out/test/'
 };
 
 var globs = {
