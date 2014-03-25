@@ -19,15 +19,14 @@
 var subtasks = require('../util').getAliasTaskSubtasks;
 
 module.exports = function(grunt) {
-    grunt.registerTask('dev', 'Lint and test, open the project web site and watch.', function() {
+    grunt.registerTask('integration', 'Check code quality, run integration specs, open the project web site and watch.', function() {
         grunt.task.run(subtasks(this.name, [
             'jshint',
             'connect:run',
             'clean:test',
-            'jasmine:test',
             'jasmine:integration',
-            'shell:openWeb',
-            'watch:dev'
+            'shell:openIntegration',
+            'watch:integration'
         ]));
     });
 };

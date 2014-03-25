@@ -34,6 +34,9 @@ module.exports = function(settings) {
             openTest: {
                 command: 'open ' + wwwBaseUrl + files.testRunner
             },
+            openIntegration: {
+                command: 'open ' + wwwBaseUrl + files.integrationRunner
+            },
             openDocs: {
                 command: 'open ' + wwwBaseUrl + directories.apiOutput
             },

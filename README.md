@@ -279,9 +279,10 @@ $ grunt plato  Run code complexity analysis using Plato.
 #### Testing & Code Coverage
 
 ```
-$ grunt jasmine           Run jasmine specs and istanbul code coverage headlessly.
-$ grunt jasmine:coverage  Run istanbul code coverage.
-$ grunt jasmine:test      Run jasmine specs.
+$ grunt jasmine                 Run jasmine specs and istanbul code coverage headlessly.
+$ grunt jasmine:coverage        Run istanbul code coverage.
+$ grunt jasmine:test            Run jasmine unit tests.
+$ grunt jasmine:integration     Run jasmine integration tests.
 ```
 
 #### Cross-Browser Testing

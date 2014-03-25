@@ -30,7 +30,9 @@ var files = {
     gruntfile: 'Gruntfile.js',
     index: 'index.html',
     requireConfigKarma: '.grunt/wf-js-grunt/require-karma.config.js',
-    testRunner: '_test.runner.html'
+    testRunner: '_test.runner.html',
+    integrationRunner: '_integration.runner.html'
+
 };
 
 var directories = {
@@ -45,7 +47,8 @@ var globs = {
     css: 'examples/**/*.css',
     html: 'examples/**/*.html',
     examples: 'examples/**/*.js',
-    specs: 'test/**/*Spec.js',
+    unitSpecs: 'test/**/!(*Integration)*Spec.js',
+    integrationSpecs: 'test/**/*IntegrationSpec.js',
     src: 'src/**/*.js',
     test: 'test/**/*.js',
     tools: 'tools/**/*.js',
