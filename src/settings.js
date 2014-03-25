@@ -30,14 +30,17 @@ var files = {
     gruntfile: 'Gruntfile.js',
     index: 'index.html',
     requireConfigKarma: '.grunt/wf-js-grunt/require-karma.config.js',
-    testRunner: '_test.runner.html'
+    testRunner: '_test.runner.html',
+    integrationRunner: '_integration.runner.html'
+
 };
 
 var directories = {
     apiOutput: 'docs/api/',
     complexityOutput: 'out/complexity/',
     coverageOutput: 'out/coverage/',
-    testOutput: 'out/test/'
+    testOutput: 'out/test/',
+    integrationOutput: 'out/integration'
 };
 
 var globs = {

@@ -23,10 +23,10 @@ module.exports = function(grunt) {
         grunt.task.run(subtasks(this.name, [
             'jshint',
             'connect:run',
-            'clean:test',
+            'clean:integration',
             'jasmine:integration',
-            'clean:docs',
-            'jsdoc'
+            'shell:openWeb',
+            'watch:dev'
         ]));
     });
 };
