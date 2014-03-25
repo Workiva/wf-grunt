@@ -37,7 +37,6 @@ module.exports = function(settings) {
             },
             test: {
                 src: [globs.src],
-                specs: globs.unitSpecs,
                 options: {
                     specs: globs.unitSpecs,
                     outfile: files.testRunner,
