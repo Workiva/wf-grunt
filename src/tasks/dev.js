@@ -25,6 +25,7 @@ module.exports = function(grunt) {
             'connect:run',
             'clean:test',
             'jasmine:test',
+            'jasmine:integration',
             'shell:openWeb',
             'watch:dev'
         ]));
