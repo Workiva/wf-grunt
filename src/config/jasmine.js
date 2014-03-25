@@ -31,7 +31,8 @@ module.exports = function(settings) {
                 keepRunner: true,
                 host: settings.wwwBaseUrl,
                 junit: {
-                    consolidate: true
+                    consolidate: true,
+                    path: directories.testOutput
                 }
             },
             test: {
@@ -43,9 +44,6 @@ module.exports = function(settings) {
                     template: require('grunt-template-jasmine-requirejs'),
                     templateOptions: {
                         requireConfig: settings.requireConfigTest
-                    },
-                    junit: {
-                        path: directories.testOutput
                     }
                 }
             },
@@ -66,9 +64,6 @@ module.exports = function(settings) {
                         templateOptions: {
                             requireConfig: settings.requireConfigCoverage
                         }
-                    },
-                    junit: {
-                        path: directories.testOutput
                     }
                 }
             },
@@ -80,9 +75,6 @@ module.exports = function(settings) {
                     template: require('grunt-template-jasmine-requirejs'),
                     templateOptions: {
                         requireConfig: settings.requireConfigTest
-                    },
-                    junit: {
-                        path: directories.integrationOutput
                     }
                 }
             },

@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         grunt.task.run(subtasks(this.name, [
             'jshint',
             'connect:run',
-            'clean:integration',
+            'clean:test',
             'jasmine:integration',
             'shell:openWeb',
             'watch:dev'
