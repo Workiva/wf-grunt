@@ -77,13 +77,6 @@ module.exports = function(settings) {
                 options: {
                     livereload: livereloadPort
                 }
-            },
-            test: {
-                files: [globs.src, globs.test],
-                tasks: ['clean:test', 'jasmine:test'],
-                options: {
-                    livereload: livereloadPort
-                }
             }
         }
     };
