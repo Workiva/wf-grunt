@@ -28,17 +28,17 @@ module.exports = function(settings) {
     return {
         jasmine: {
             options: {
-                specs: globs.specs,
                 keepRunner: true,
                 host: settings.wwwBaseUrl,
                 junit: {
-                    path: directories.testOutput,
-                    consolidate: true
+                    consolidate: true,
+                    path: directories.testOutput
                 }
             },
             test: {
                 src: [globs.src],
                 options: {
+                    specs: globs.unitSpecs,
                     outfile: files.testRunner,
                     template: require('grunt-template-jasmine-requirejs'),
                     templateOptions: {
@@ -49,6 +49,7 @@ module.exports = function(settings) {
             coverage: {
                 src: [globs.src],
                 options: {
+                    specs: globs.unitSpecs,
                     outfile: files.coverageRunner,
                     template: require('grunt-template-jasmine-istanbul'),
                     templateOptions: {
@@ -64,7 +65,18 @@ module.exports = function(settings) {
                         }
                     }
                 }
-            }
+            },
+            integration: {
+                src: [globs.src],
+                options: {
+                    specs: globs.integrationSpecs,
+                    outfile: files.integrationRunner,
+                    template: require('grunt-template-jasmine-requirejs'),
+                    templateOptions: {
+                        requireConfig: settings.requireConfigTest
+                    }
+                }
+            },
         }
     };
 };

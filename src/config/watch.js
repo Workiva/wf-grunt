@@ -39,12 +39,32 @@ module.exports = function(settings) {
                     livereload: livereloadPort
                 }
             },
+            test: {
+                files: [
+                    files.index, globs.src, globs.templates, globs.unitSpecs, globs.testTemplates, globs.examples,
+                    globs.html, globs.css
+                ],
+                tasks: ['jshint', 'clean:test', 'jasmine:test'],
+                options: {
+                    livereload: livereloadPort
+                }
+            },
+            integration: {
+                files: [
+                    files.index, globs.src, globs.templates, globs.integrationSpecs, globs.testTemplates,
+                    globs.examples, globs.html, globs.css
+                ],
+                tasks: ['jshint', 'clean:test', 'jasmine:integration'],
+                options: {
+                    livereload: livereloadPort
+                }
+            },
             dev: {
                 files: [
                     files.index, globs.src, globs.templates, globs.test, globs.testTemplates,
                     globs.examples, globs.html, globs.css
                 ],
-                tasks: ['jshint', 'clean:test', 'jasmine:test'],
+                tasks: ['jshint', 'clean:test', 'jasmine:test', 'jasmine:integration'],
                 options: {
                     livereload: livereloadPort
                 }
@@ -66,13 +86,6 @@ module.exports = function(settings) {
                     globs.examples, globs.html, globs.css
                 ],
                 tasks: [],
-                options: {
-                    livereload: livereloadPort
-                }
-            },
-            test: {
-                files: [globs.src, globs.templates, globs.test, globs.testTemplates],
-                tasks: ['clean:test', 'jasmine:test'],
                 options: {
                     livereload: livereloadPort
                 }
