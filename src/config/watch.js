@@ -33,28 +33,37 @@ module.exports = function(settings) {
                 }
             },
             coverage: {
-                files: [globs.src, globs.test],
+                files: [globs.src, globs.templates, globs.test, globs.testTemplates],
                 tasks: ['clean:coverage', 'jasmine:coverage'],
                 options: {
                     livereload: livereloadPort
                 }
             },
             test: {
-                files: [files.index, globs.src, globs.unitSpecs, globs.examples, globs.html, globs.css],
+                files: [
+                    files.index, globs.src, globs.templates, globs.unitSpecs, globs.testTemplates, globs.examples,
+                    globs.html, globs.css
+                ],
                 tasks: ['jshint', 'clean:test', 'jasmine:test'],
                 options: {
                     livereload: livereloadPort
                 }
             },
             integration: {
-                files: [files.index, globs.src, globs.integrationSpecs, globs.examples, globs.html, globs.css],
+                files: [
+                    files.index, globs.src, globs.templates, globs.integrationSpecs, globs.testTemplates,
+                    globs.examples, globs.html, globs.css
+                ],
                 tasks: ['jshint', 'clean:test', 'jasmine:integration'],
                 options: {
                     livereload: livereloadPort
                 }
             },
             dev: {
-                files: [files.index, globs.src, globs.test, globs.examples, globs.html, globs.css],
+                files: [
+                    files.index, globs.src, globs.templates, globs.test, globs.testTemplates,
+                    globs.examples, globs.html, globs.css
+                ],
                 tasks: ['jshint', 'clean:test', 'jasmine:test', 'jasmine:integration'],
                 options: {
                     livereload: livereloadPort
@@ -72,7 +81,10 @@ module.exports = function(settings) {
                 tasks: ['jshint']
             },
             serve: {
-                files: [files.index, globs.src, globs.test, globs.examples, globs.html, globs.css],
+                files: [
+                    files.index, globs.src, globs.templates, globs.test, globs.testTemplates,
+                    globs.examples, globs.html, globs.css
+                ],
                 tasks: [],
                 options: {
                     livereload: livereloadPort

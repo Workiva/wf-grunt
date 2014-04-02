@@ -50,7 +50,9 @@ var globs = {
     unitSpecs: 'test/**/!(*Integration)*Spec.js',
     integrationSpecs: 'test/**/*IntegrationSpec.js',
     src: 'src/**/*.js',
+    templates: 'src/**/*.html',
     test: 'test/**/*.js',
+    testTemplates: 'test/**/*.html',
     tools: 'tools/**/*.js',
     vendor: 'examples/vendor/**/*.js'
 };
