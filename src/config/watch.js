@@ -44,7 +44,7 @@ module.exports = function(settings) {
                     files.index, globs.src, globs.templates, globs.unitSpecs, globs.testTemplates, globs.examples,
                     globs.html, globs.css
                 ],
-                tasks: ['jshint', 'clean:test', 'jasmine:test'],
+                tasks: ['clean:test', 'jasmine:test'],
                 options: {
                     livereload: livereloadPort
                 }
@@ -54,7 +54,7 @@ module.exports = function(settings) {
                     files.index, globs.src, globs.templates, globs.integrationSpecs, globs.testTemplates,
                     globs.examples, globs.html, globs.css
                 ],
-                tasks: ['jshint', 'clean:test', 'jasmine:integration'],
+                tasks: ['clean:test', 'jasmine:integration'],
                 options: {
                     livereload: livereloadPort
                 }
