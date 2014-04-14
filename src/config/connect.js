@@ -22,6 +22,7 @@ module.exports = function(settings) {
 
     function getCommonMiddleware(connect, options) {
         return [
+            require('grunt-connect-rewrite/lib/utils').rewriteRequest,
             require('../middleware/proxy')(settings.proxies),
             require('connect-livereload')({
                 port: settings.livereloadPort,
