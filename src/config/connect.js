@@ -21,7 +21,7 @@
 module.exports = function(settings) {
 
     function getCommonMiddleware(connect, options) {
-        return [
+        var middleware = [
             require('../middleware/proxy')(settings.proxies),
             require('connect-livereload')({
                 port: settings.livereloadPort,
@@ -30,6 +30,11 @@ module.exports = function(settings) {
             connect.static(options.base),
             connect.favicon()
         ];
+        // prepend custom middleware
+        if (settings.middleware) {
+            middleware = [].concat(settings.middleware(connect, options), middleware);
+        }
+        return middleware;
     }
 
     return {
