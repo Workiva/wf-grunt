@@ -21,11 +21,11 @@ describe('e2e', function() {
         spawn('grunt', [], { cwd: './test/sample', stdio: 'inherit' })
             .on('error', done)
             .on('exit', function(code) {
-                if (code) {
-                    done(new Error('Aborted due to warnings!'));
+                if (code === 0) {
+                    done();
                 }
                 else {
-                    done();
+                    done(new Error('Grunt exited with error ' + code));
                 }
             });
     }, 20000);
