@@ -20,8 +20,13 @@ describe('e2e', function() {
     it('should successfully run `grunt` in project', function(done) {
         spawn('grunt', [], { cwd: './test/sample', stdio: 'inherit' })
             .on('error', done)
-            .on('exit', function() {
-                done();
+            .on('exit', function(code) {
+                if (code) {
+                    done(new Error('Aborted due to warnings!'));
+                }
+                else {
+                    done();
+                }
             });
     }, 20000);
 });
