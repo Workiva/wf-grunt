@@ -129,6 +129,15 @@ module.exports = function(grunt) {
                 if (name === 'lint') {
                     tasks.unshift('customTask');
                 }
+            },
+
+            // Add custom middleware for the connect server.
+            // This function should return a list of middleware that will
+            // be prepended to the middleware already present in wf-grunt.
+            middleware: function(connect, options) {
+                return [
+                    customMiddleware
+                ];
             }
         }
     });
