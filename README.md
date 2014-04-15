@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/WebFilings/wf-grunt.png)](https://travis-ci.org/WebFilings/wf-grunt)
-
-WebFilings Grunt
+WebFilings Grunt [![Build Status](https://travis-ci.org/WebFilings/wf-grunt.png)](https://travis-ci.org/WebFilings/wf-grunt)
 ================
 
 > Opinionated Suite of Common Grunt Tasks for JavaScript Libraries.
