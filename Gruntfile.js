@@ -18,9 +18,11 @@ module.exports = function(grunt) {
             }
         },
         jasmine_node: {
-            projectRoot: './test',
-            specNameMatcher: '_spec',
-            forceExit: true
+            options: {
+                specNameMatcher: '_spec',
+                forceExit: true
+            },
+            all: ['./test']
         },
         watch: {
             all: {
