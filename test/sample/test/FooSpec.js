@@ -23,5 +23,16 @@ define(function(require) {
         it('should be named "foo"', function() {
             expect(Foo.name).toBe('foo');
         });
+        it('should be async', function(done) {
+            var a = 0;
+            function checkit() {
+                expect(a).toBe(1);
+                done();
+            }
+            setTimeout(function() {
+                a = 1;
+                checkit();
+            }, 500);
+        });
     });
 });
