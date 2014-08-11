@@ -69,6 +69,7 @@ var defaults = {
     onAliasTaskRunning: function(/*name, subtasks*/) {},
     proxies: {},
     requireConfig: {},
+    sauceLabsCredentials: null,
     wwwPort: 9000
 };
 

@@ -143,31 +143,156 @@ module.exports = function(settings) {
         _.merge(config, {
             options: {
                 browserStack: settings.browserStackCredentials,
-                customLaunchers: getBrowserStackLaunchers()
+                customLaunchers: {
+                    BS_ios_5_1_iPad_3: {
+                        base: 'BrowserStack',
+                        os: 'ios',
+                        os_version: '5.1',
+                        device: 'iPad 3rd'
+                    },
+                    BS_ios_6_iPad_3: {
+                        base: 'BrowserStack',
+                        os: 'ios',
+                        os_version: '6.0',
+                        device: 'iPad 3rd (6.0)'
+                    },
+                    BS_osx_chrome_27: {
+                        base: 'BrowserStack',
+                        os: 'OS X',
+                        os_version: 'Lion',
+                        browser: 'chrome',
+                        browser_version: '27.0'
+                    },
+                    BS_osx_safari_6: {
+                        base: 'BrowserStack',
+                        os: 'OS X',
+                        os_version: 'Lion',
+                        browser: 'safari',
+                        browser_version: '6.0'
+                    },
+                    BS_osx_firefox_21: {
+                        base: 'BrowserStack',
+                        os: 'OS X',
+                        os_version: 'Lion',
+                        browser: 'firefox',
+                        browser_version: '21.0'
+                    },
+                    BS_win_7_chrome_27: {
+                        base: 'BrowserStack',
+                        os: 'Windows',
+                        os_version: '7',
+                        browser: 'chrome',
+                        browser_version: '27.0'
+                    },
+                    BS_win_7_firefox_21: {
+                        base: 'BrowserStack',
+                        os: 'Windows',
+                        os_version: '7',
+                        browser: 'firefox',
+                        browser_version: '21.0'
+                    },
+                    BS_win_7_ie_9: {
+                        base: 'BrowserStack',
+                        os: 'Windows',
+                        os_version: '7',
+                        browser: 'ie',
+                        browser_version: '9.0'
+                    },
+                    BS_win_8_ie_10: {
+                        base: 'BrowserStack',
+                        os: 'Windows',
+                        os_version: '8',
+                        browser: 'ie',
+                        browser_version: '10.0'
+                    }
+                }
             },
-            ios: {
+            browserstack: {
                 singleRun: true,
                 browsers: [
-                    'ios_5_1_iPad_3',
-                    'ios_6_iPad_3'
-                ]
-            },
-            osx: {
-                singleRun: true,
-                browsers: [
-                    'osx_chrome_27',
-                    'osx_safari_6',
-                    'osx_firefox_21'
-                ]
-            },
-            win: {
-                singleRun: true,
-                browsers: [
-                    'win_7_chrome_27',
-                    'win_7_firefox_21',
+                    'BS_ios_5_1_iPad_3',
+                    'BS_ios_6_iPad_3',
+                    'BS_osx_chrome_27',
+                    'BS_osx_safari_6',
+                    'BS_osx_firefox_21',
+                    'BS_win_7_chrome_27',
+                    'BS_win_7_firefox_21',
                     // TODO: not working; socket.io cannot create connection for some reason.
-                    // 'win_7_ie_9',
-                    'win_8_ie_10'
+                    // 'BS_win_7_ie_9',
+                    'BS_win_8_ie_10'
+                ]
+            }
+        });
+    }
+
+    // If given SauceLabs credentials, add saucelabs tasks.
+    if (settings.sauceLabsCredentials) {
+        _.merge(config, {
+            options: {
+                buildNumber: process.env.TRAVIS_BUILD_NUMBER,
+                captureTimeout: 120000,
+                customLaunchers: {
+                    SL_ios_7_1_iPad: {
+                        base: 'SauceLabs',
+                        browserName: 'ipad',
+                        platform: 'OS X 10.9',
+                        version: '7.1'
+                    },
+                    SL_chrome: {
+                        base: 'SauceLabs',
+                        browserName: 'chrome'
+                    },
+                    SL_firefox: {
+                        base: 'SauceLabs',
+                        browserName: 'firefox'
+                    },
+                    SL_safari: {
+                        base: 'SauceLabs',
+                        browserName: 'safari',
+                        platform: 'OS X 10.9',
+                        version: '7' // latest
+                    },
+                    SL_ie_9: {
+                        base: 'SauceLabs',
+                        browserName: 'internet explorer',
+                        platform: 'Windows 7',
+                        version: '9'
+                    },
+                    SL_ie_10: {
+                        base: 'SauceLabs',
+                        browserName: 'internet explorer',
+                        platform: 'Windows 7',
+                        version: '10'
+                    },
+                    SL_ie_11: {
+                        base: 'SauceLabs',
+                        browserName: 'internet explorer',
+                        platform: 'Windows 7',
+                        version: '11'
+                    }
+                },
+                reporters: ['dots', 'saucelabs'],
+                sauceLabs: {
+                    testName: 'uicomponents unit tests',
+                    username: settings.sauceLabsCredentials.username,
+                    accessKey: settings.sauceLabsCredentials.accessKey,
+                    connectOptions: {
+                        port: 5757,
+                        logfile: 'sauce_connect.log'
+                    }
+                }
+            },
+            sauce: {
+                singleRun: true,
+                browsers: [
+                    // TODO: Will disconnect every time for some reason.
+                    // 'SL_ios_7_1_iPad',
+                    'SL_chrome',
+                    'SL_firefox',
+                    'SL_safari',
+                    'SL_ie_9',
+                    'SL_ie_10',
+                    'SL_ie_11'
                 ]
             }
         });
