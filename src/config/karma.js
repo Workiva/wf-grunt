@@ -25,6 +25,7 @@ var grunt = require('grunt');
 
 function hasSauceLabsCredentials(settings) {
     return (
+        settings.sauceLabsCredentials &&
         settings.sauceLabsCredentials.username &&
         settings.sauceLabsCredentials.accessKey
     );
