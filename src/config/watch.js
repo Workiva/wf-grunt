@@ -64,7 +64,7 @@ module.exports = function(settings) {
                     files.index, globs.src, globs.templates, globs.test, globs.testTemplates,
                     globs.examples, globs.html, globs.css
                 ],
-                tasks: ['jshint', 'clean:test', 'jasmine:test', 'jasmine:integration'],
+                tasks: ['jshint', 'clean:test', 'jasmine:test'],
                 options: {
                     livereload: livereloadPort
                 }
