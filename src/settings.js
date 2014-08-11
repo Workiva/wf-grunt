@@ -58,7 +58,6 @@ var globs = {
 };
 
 var defaults = {
-    browserStackCredentials: null,
     coverageThresholds: {
         statements: 90,
         branches: 90,

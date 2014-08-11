@@ -108,14 +108,12 @@ module.exports = function(grunt) {
                 '/requested/path/(.*\\.html)': '/forwarded/path/$1',
             },
 
-            // Enable Karma testing with BrowserStack by supplying your credentials.
-            // If enabled, you will have a default set of browsers available for
-            // executing your unit tests via the following task:targets:
-            // - iOS      karma:ios
-            // - OS X     karma:osx
-            // - Windows  karma:win
+            // Enable Karma testing with SauceLabs by supplying your credentials.
+            // If the username and accessKey are set, then karma will launch
+            // browsers on SauceLabs to run the tests; if not, karma will run
+            // locally in development mode, allowing you to connect local browsers:
             // DEFAULT: undefined
-            browserStackCredentials: {
+            sauceLabsCredentials: {
                 username: 'your_username',
                 accessKey: 'your_accessKey'
             },
@@ -294,16 +292,14 @@ $ grunt jasmine:integration     Run jasmine integration tests.
 
 #### Cross-Browser Testing
 
-We use [Karma][Karma] and [BrowserStack][BrowserStack] to do cross-browser testing.
+We use [Karma][Karma] and [SauceLabs][SauceLabs] to do cross-browser testing.
 
 ```
-$ grunt karma:dev  Start karma and wait for locally connected clients.
-$ grunt karma:ios  Start karma and launch iOS devices on BrowserStack.
-$ grunt karma:osx  Start karma and launch OS X browsers on BrowserStack.
-$ grunt karma:win  Start karma and launch Windows browsers on BrowserStack.
+$ grunt karma:local  Start karma and wait for local browsers to connect.
+$ grunt karma:sauce  Start karma launch browsers on SauceLabs.
 ```
 
-The `:dev` target is useful for fixing test failures from BrowserStack browsers.
+The `:local` target is useful for fixing test failures from SauceLabs browsers.
 It will start Karma, run tests on PhantomJS for a quick sanity check, and then wait.
 You can then connect devices to the Karma server and start fixing things.
 Just point your browsers to the URL Karma logs after it is started.
@@ -357,7 +353,7 @@ Credits
 - [Jasmine][Jasmine]: test framework
 - [Istanbul][Istanbul]: code coverage framework
 - [Karma][Karma]: multi-client test runner
-- [BrowserStack][BrowserStack]: browsers in the cloud
+- [SauceLabs][SauceLabs]: browsers in the cloud
 
 [Node]: http://nodejs.org/api/
 [NPM]: https://npmjs.org/
@@ -370,6 +366,6 @@ Credits
 [Jasmine]: http://pivotal.github.io/jasmine/
 [Istanbul]: https://github.com/gotwarlost/istanbul
 [Karma]: http://karma-runner.github.io/
-[BrowserStack]: http://www.browserstack.com/list-of-browsers-and-platforms
+[SauceLabs]: https://saucelabs.com/platforms
 
 [DefaultJSHintConfiguration]: https://github.com/WebFilings/wf-js-grunt/blob/master/src/config/jshint.js
