@@ -23,11 +23,11 @@
 var _ = require('lodash');
 var grunt = require('grunt');
 
-function hasSauceLabsCredentials(settings) {
+function isSauceLabsEnabled(settings) {
     return (
-        settings.sauceLabsCredentials &&
-        settings.sauceLabsCredentials.username &&
-        settings.sauceLabsCredentials.accessKey
+        settings.sauceLabs &&
+        settings.sauceLabs.username &&
+        settings.sauceLabs.accessKey
     );
 }
 
@@ -65,7 +65,7 @@ module.exports = function(settings) {
     });
 
     // If not given SauceLabs credentials, run locally
-    if (!hasSauceLabsCredentials(settings)) {
+    if (!isSauceLabsEnabled(settings)) {
         _.merge(config, {
             local: {
                 autoWatch: true,
@@ -124,9 +124,9 @@ module.exports = function(settings) {
                 },
                 reporters: ['dots', 'saucelabs'],
                 sauceLabs: {
-                    testName: 'wf-uicomponents unit tests',
-                    username: settings.sauceLabsCredentials.username,
-                    accessKey: settings.sauceLabsCredentials.accessKey,
+                    testName: settings.sauceLabs.testName || 'test run',
+                    username: settings.sauceLabs.username,
+                    accessKey: settings.sauceLabs.accessKey,
                     connectOptions: {
                         port: 5757,
                         logfile: 'sauce_connect.log'

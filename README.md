@@ -113,7 +113,8 @@ module.exports = function(grunt) {
             // browsers on SauceLabs to run the tests; if not, karma will run
             // locally in development mode, allowing you to connect local browsers:
             // DEFAULT: undefined
-            sauceLabsCredentials: {
+            sauceLabs: {
+                testName: 'my repo unit tests',
                 username: 'your_username',
                 accessKey: 'your_accessKey'
             },
@@ -299,6 +300,11 @@ We use [Karma][Karma] and [SauceLabs][SauceLabs] to do cross-browser testing.
 $ grunt karma:local  Start karma and wait for local browsers to connect.
 $ grunt karma:sauce  Start karma launch browsers on SauceLabs.
 ```
+
+If you supply your sauce labs credentials in the configuration for wf-grunt,
+then the `karma:sauce` target will be available. If you do not, then the
+`karma:local` target will be available. This means you can just run
+`grunt karma` and run locally or on sauce depending on your environment.
 
 The `:local` target is useful for fixing test failures from SauceLabs browsers.
 It will start Karma, run tests on PhantomJS for a quick sanity check, and then wait.
