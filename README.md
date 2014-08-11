@@ -216,6 +216,7 @@ The following tasks will combine a number of single tasks in a meaningful way.
 
 ```
 $ grunt          Check code quality (lint, test, cover, docs).
+$ grunt ci       Check code quality on CI server.
 $ grunt qa       Check code quality and open the project web site.
 $ grunt serve    Open the project web site.
 $ grunt dev      Lint and test, open the project web site and watch.

@@ -75,6 +75,7 @@ describe('when wf-js-grunt initializes grunt context', function() {
         [
             'default',
             'analyze',
+            'ci',
             'cover',
             'default',
             'dev',
