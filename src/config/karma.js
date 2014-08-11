@@ -64,7 +64,7 @@ module.exports = function(settings) {
         }
     });
 
-    // If not given SauceLabs credentials, run locally
+    // If not given SauceLabs config, run locally
     if (!isSauceLabsEnabled(settings)) {
         _.merge(config, {
             local: {
@@ -74,11 +74,11 @@ module.exports = function(settings) {
             }
         });
     }
-    // If given SauceLabs credentials, run on SauceLabs.
+    // If given SauceLabs config, run on SauceLabs.
     else {
         _.merge(config, {
             sauce: {
-                buildNumber: process.env.TRAVIS_BUILD_NUMBER,
+                buildNumber: settings.sauceLabs.buildNumber,
                 browsers: [
                     'SL_chrome',
                     'SL_firefox',
@@ -124,7 +124,7 @@ module.exports = function(settings) {
                 },
                 reporters: ['dots', 'saucelabs'],
                 sauceLabs: {
-                    testName: settings.sauceLabs.testName || 'test run',
+                    testName: settings.sauceLabs.testName,
                     username: settings.sauceLabs.username,
                     accessKey: settings.sauceLabs.accessKey,
                     connectOptions: {

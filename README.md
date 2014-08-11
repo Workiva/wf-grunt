@@ -114,6 +114,7 @@ module.exports = function(grunt) {
             // locally in development mode, allowing you to connect local browsers:
             // DEFAULT: undefined
             sauceLabs: {
+                buildNumber: 'build number from CI server',
                 testName: 'my repo unit tests',
                 username: 'your_username',
                 accessKey: 'your_accessKey'
