@@ -25,7 +25,6 @@ module.exports = function(grunt) {
             'connect:run',
             'clean:test',
             'jasmine:test',
-            'jasmine:integration',
             'clean:coverage',
             'jasmine:coverage',
             'clean:docs',

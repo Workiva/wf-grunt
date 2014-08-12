@@ -58,7 +58,6 @@ var globs = {
 };
 
 var defaults = {
-    browserStackCredentials: null,
     coverageThresholds: {
         statements: 90,
         branches: 90,
@@ -69,6 +68,7 @@ var defaults = {
     onAliasTaskRunning: function(/*name, subtasks*/) {},
     proxies: {},
     requireConfig: {},
+    sauceLabs: null,
     wwwPort: 9000
 };
 
