@@ -371,7 +371,7 @@ Credits
 [JSDoc]: http://usejsdoc.org/
 [JSHint]: http://www.jshint.com/docs/
 [Plato]: https://github.com/es-analysis/plato
-[Jasmine]: http://pivotal.github.io/jasmine/
+[Jasmine]: https://jasmine.github.io/
 [Istanbul]: https://github.com/gotwarlost/istanbul
 [Karma]: http://karma-runner.github.io/
 [SauceLabs]: https://saucelabs.com/platforms
