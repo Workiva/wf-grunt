@@ -33,7 +33,7 @@
     "karma-requirejs": "^0.2.2",
     "karma-sauce-launcher": "^0.2.10",
     "karma-script-launcher": "^0.1.0",
-    "lodash": "~2.4.0",
+    "lodash": "^4.17.13",
     "requirejs": "^2.1.14"
   },
   "devDependencies": {
